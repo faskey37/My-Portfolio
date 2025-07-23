@@ -2251,6 +2251,226 @@ background-size: 20px 20px;
                 padding: 3rem 0;
             }
         }
+
+/* Currently Learning Section */
+.learning {
+    background-color: var(--lighter-color);
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 0;
+}
+
+.learning::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 0;
+}
+
+.learning-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.learning-item {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(226, 232, 240, 0.5);
+    transform-style: preserve-3d;
+}
+
+.learning-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+}
+
+.learning-item i {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: var(--transition);
+}
+
+.learning-item:hover i {
+    transform: scale(1.1);
+}
+
+.learning-item h3 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.learning-item p {
+    color: var(--gray-color);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Animation for learning items */
+.learning-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.6s forwards;
+}
+
+.learning-item:nth-child(1) { animation-delay: 0.2s; }
+.learning-item:nth-child(2) { animation-delay: 0.4s; }
+.learning-item:nth-child(3) { animation-delay: 0.6s; }
+.learning-item:nth-child(4) { animation-delay: 0.8s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .learning-items {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .learning-items {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .learning {
+        padding: 4rem 0;
+    }
+}
+
+/* Interests Section */
+.interests {
+    background-color: var(--light-color);
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 0;
+}
+
+.interests::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-size: 20px 20px;
+    z-index: 0;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.interest-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(226, 232, 240, 0.5);
+    transform-style: preserve-3d;
+}
+
+.interest-card:hover {
+    transform: translateY(-5px) rotateY(5deg);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+}
+
+.interest-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.75rem;
+    transition: var(--transition);
+}
+
+.interest-card:hover .interest-icon {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.interest-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.interest-card p {
+    color: var(--gray-color);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Animation for interest cards */
+.interest-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.6s forwards;
+}
+
+.interest-card:nth-child(1) { animation-delay: 0.2s; }
+.interest-card:nth-child(2) { animation-delay: 0.4s; }
+.interest-card:nth-child(3) { animation-delay: 0.6s; }
+.interest-card:nth-child(4) { animation-delay: 0.8s; }
+.interest-card:nth-child(5) { animation-delay: 1.0s; }
+.interest-card:nth-child(6) { animation-delay: 1.2s; }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .interests-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .interests-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .interests-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .interests {
+        padding: 4rem 0;
+    }
+}
+
     </style>
 </head>
 
@@ -2266,7 +2486,8 @@ background-size: 20px 20px;
                 <ul class="nav-links">
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#education">education</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#interests">Interests</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#featured-skills">Workflow</a></li>
@@ -2401,6 +2622,69 @@ background-size: 20px 20px;
                 </div>
             </div>
     </section>
+
+<section id="interests" class="interests">
+    <div class="container">
+        <h2 class="section-title slide-in-up">My <span class="text-gradient">Interests</span></h2>
+        <p class="section-subtitle slide-in-up delay-1">Beyond coding - things that inspire and motivate me</p>
+        
+        <div class="interests-grid">
+            <!-- Tech & Iron Man -->
+            <div class="interest-card">
+                <div class="interest-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Tech & Iron Man</h3>
+                <p>Fascinated by cutting-edge technology and Tony Stark's innovations in the Marvel universe</p>
+            </div>
+            
+            <!-- Electronics -->
+            <div class="interest-card">
+                <div class="interest-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3>Electronics</h3>
+                <p>Tinkering with circuits, Arduino projects, and understanding how devices work</p>
+            </div>
+            
+            <!-- Automobiles -->
+            <div class="interest-card">
+                <div class="interest-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Automobiles</h3>
+                <p>Passionate about car technology, especially electric vehicles and futuristic designs</p>
+            </div>
+            
+            <!-- Travel -->
+            <div class="interest-card">
+                <div class="interest-icon">
+                    <i class="fas fa-plane"></i>
+                </div>
+                <h3>Travel</h3>
+                <p>Exploring new places, cultures, and capturing memories through photography</p>
+            </div>
+            
+            <!-- Movies -->
+            <div class="interest-card">
+                <div class="interest-icon">
+                    <i class="fas fa-film"></i>
+                </div>
+                <h3>Sci-Fi Movies</h3>
+                <p>Love watching tech-focused films especially Marvel, Interstellar, and cyberpunk genres</p>
+            </div>
+            
+            <!-- Tech Arts -->
+            <div class="interest-card">
+                <div class="interest-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>Tech Arts</h3>
+                <p>Creating digital art and designs that blend technology with aesthetics</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
@@ -2697,6 +2981,40 @@ background-size: 20px 20px;
         </div>
     </section>
 
+<section id="learning" class="learning">
+    <div class="container">
+        <h2 class="section-title slide-in-up">Currently <span class="text-gradient">Learning</span></h2>
+        <p class="section-subtitle slide-in-up delay-1">Technologies and skills I'm actively expanding my knowledge in</p>
+        
+        <div class="learning-items">
+            <div class="learning-item">
+                <i class="fab fa-react"></i>
+                <h3>React Native</h3>
+                <p>Building cross-platform mobile apps</p>
+            </div>
+            
+            <div class="learning-item">
+                <i class="fab fa-node-js"></i>
+                <h3>Node.js</h3>
+                <p>Developing server-side applications</p>
+            </div>
+            
+            <div class="learning-item">
+                <i class="fas fa-robot"></i>
+                <h3>Machine Learning</h3>
+                <p>Exploring AI fundamentals with Python</p>
+            </div>
+            
+            <div class="learning-item">
+    <i class="fas fa-chart-line"></i>
+    <h3>Data Science</h3>
+    <p>Exploring data analysis, visualization, and machine learning techniques</p>
+</div>
+        </div>
+    </div>
+</section>
+
+
 <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
@@ -2736,6 +3054,105 @@ background-size: 20px 20px;
                         </div>
                     </div>
                 </div>
+                                <div class="project-card slide-in-up" data-category="fullstack">
+                    <div class="project-image-container">
+                        <img src="https://unsplash.com/photos/XJXWbfSo2f0/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzUzMjUxOTcxfA&force=true"
+                            alt="E-Commerce Platform" class="project-image">
+                        <span class="project-badge">Full Stack</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Full Stack</span>
+                        <h3 class="project-title">Quran learning website using  wix </h3>
+                        <p class="project-description">A website designed for learning Quran, designed using wix website builder which contain inspiring storeis of the prophet and downloadable pdf file for different chapters of quran and details about the surahs of the quran.</p>
+                        <div class="project-tech">
+                            <span class="project-tech-tag">Wix Website Builder</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://khantauqeer272.wixsite.com/learn-quran" class="project-link demo">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                                <div class="project-card slide-in-up" data-category="fullstack">
+                    <div class="project-image-container">
+                        <img src="https://unsplash.com/photos/e_MdMMKrgdY/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTMxfHx0ZWNofGVufDB8fHx8MTc1MzIzNjM0MHww&force=true"
+                            alt="E-Commerce Platform" class="project-image">
+                        <span class="project-badge">Full Stack</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Full Stack</span>
+                        <h3 class="project-title">Service booking app </h3>
+                        <p class="project-description">A service booking app named quickfix pro designed to provide general house services like plumbing, elctrical etc; it has two parts the online website and an android app designed using android webview  (still work in progress) .</p>
+                        <div class="project-tech">
+                            <span class="project-tech-tag">Firebase</span>
+                            <span class="project-tech-tag">JavaScript</span>
+                            <span class="project-tech-tag">Tailwind CSS</span>
+                            <span class="project-tech-tag">Firestore</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://faskey37.github.io/Quick-fix-app/" class="project-link demo">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/faskey37/Quick-fix-app" class="project-link code">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                                <div class="project-card slide-in-up" data-category="fullstack">
+                    <div class="project-image-container">
+                        <img src="https://unsplash.com/photos/L0nipfx-Ry4/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzUzMjU0OTg3fA&force=true"
+                            alt="E-Commerce Platform" class="project-image">
+                        <span class="project-badge">Full Stack</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Full Stack</span>
+                        <h3 class="project-title">Raha Health App</h3>
+                        <p class="project-description">A healthcare app designed to combine all the healthcare services onto one platform from where you can book health test, check your daily goals your health insight, your profile and much more (still work in progress) .</p>
+                        <div class="project-tech">
+                            <span class="project-tech-tag">Firebase</span>
+                            <span class="project-tech-tag">JavaScript</span>
+                            <span class="project-tech-tag">Bootstrap CSS</span>
+                            <span class="project-tech-tag">Firestore</span>
+                            <span class="project-tech-tag">Goolge fonts</span>
+                            <span class="project-tech-tag">html5</span>
+                            <span class="project-tech-tag">API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/faskey37/raha/tree/staging" class="project-link code">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                                <div class="project-card slide-in-up" data-category="fullstack">
+                    <div class="project-image-container">
+                        <img src="https://unsplash.com/photos/YI_9SivVt_s/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzUzMjU0ODQ2fA&force=true"
+                            alt="E-Commerce Platform" class="project-image">
+                        <span class="project-badge">Full Stack</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Full Stack</span>
+                        <h3 class="project-title">SphereX technologies</h3>
+                        <p class="project-description">SphereX is engaging with a skilled IT startup to access expert-driven tech solutions aimed at strengthening our digital infrastructure and supporting our growth journey (still work in progress).</p>
+                        <div class="project-tech">
+                            <span class="project-tech-tag">Firebase</span>
+                            <span class="project-tech-tag">JavaScript</span>
+                            <span class="project-tech-tag"> Css3</span>
+                            <span class="project-tech-tag">Firestore</span>
+                            <span class="project-tech-tag">html5</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link demo">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="project-link code">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card slide-in-up delay-1" data-category="frontend">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
@@ -2755,10 +3172,10 @@ background-size: 20px 20px;
                             <span class="project-tech-tag">Bootstrap</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link demo">
+                            <a href="https://faskey37.github.io/My-Portfolio/" class="project-link demo">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/faskey37" class="project-link code">
+                            <a href="https://github.com/faskey37/My-Portfolio" class="project-link code">
                                 <i class="fab fa-github"></i> Source Code
                             </a>
                         </div>
@@ -2766,7 +3183,7 @@ background-size: 20px 20px;
                 </div>
                 <div class="project-card slide-in-up delay-2" data-category="frontend">
                     <div class="project-image-container">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                        <img src="https://unsplash.com/photos/bS46IAXWAO4/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8cGFjJTIwbWFufGVufDB8fHx8MTc1MzI1NTI3MHww&force=true"
                             alt="API Service" class="project-image">
                         <span class="project-badge">frontend</span>
                     </div>
